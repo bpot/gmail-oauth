@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "gmail-oauth"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Implements Gmail OAuth access methods for Net::IMAP and Net::SMTP}
+    gem.description = %Q{Implements Gmail OAuth access methods for Net::IMAP and Net::SMTP}
     gem.email = "bobby.potter@gmail.com"
     gem.homepage = "http://github.com/bpot/gmail-oauth"
     gem.authors = ["Bob Potter"]
@@ -24,20 +24,7 @@ RSpec::Core::RakeTask.new(:spec) do |c|
   c.ruby_opts = "-rubygems"
 end
 
-=begin
-Spec::Rake::SpecTask.new(:spec) do |spec|
-  spec.libs << 'lib' << 'spec'
-  spec.spec_files = FileList['spec/**/*_spec.rb']
-end
-
-Spec::Rake::SpecTask.new(:rcov) do |spec|
-  spec.libs << 'lib' << 'spec'
-  spec.pattern = 'spec/**/*_spec.rb'
-  spec.rcov = true
-end
-=end
-
-#task :spec => :check_dependencies
+task :spec => :check_dependencies
 
 task :default => :spec
 

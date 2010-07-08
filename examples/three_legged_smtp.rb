@@ -1,5 +1,9 @@
+$LOAD_PATH.unshift File.dirname(__FILE__) + '/../lib'
 require 'rubygems'
 require 'gmail-oauth'
+
+raise ArgumentError, "please provide email address (ruby examples/three_legged_smtp.rb [email_address])" unless ARGV[0]
+
 gmail_address = ARGV[0]
 
 consumer = OAuth::Consumer.new("anonymous", "anonymous", 
