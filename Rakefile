@@ -10,7 +10,8 @@ begin
     gem.email = "bobby.potter@gmail.com"
     gem.homepage = "http://github.com/bpot/gmail-oauth"
     gem.authors = ["Bob Potter"]
-    gem.add_development_dependency "rspec", ">= 1.2.9"
+    gem.add_development_dependency "rspec", ">= 2.0.0.beta.16"
+    gem.add_dependency "oauth"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
@@ -18,7 +19,12 @@ rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
 end
 
-require 'spec/rake/spectask'
+require 'rspec/core/rake_task'
+RSpec::Core::RakeTask.new(:spec) do |c|
+  c.ruby_opts = "-rubygems"
+end
+
+=begin
 Spec::Rake::SpecTask.new(:spec) do |spec|
   spec.libs << 'lib' << 'spec'
   spec.spec_files = FileList['spec/**/*_spec.rb']
@@ -29,8 +35,9 @@ Spec::Rake::SpecTask.new(:rcov) do |spec|
   spec.pattern = 'spec/**/*_spec.rb'
   spec.rcov = true
 end
+=end
 
-task :spec => :check_dependencies
+#task :spec => :check_dependencies
 
 task :default => :spec
 
