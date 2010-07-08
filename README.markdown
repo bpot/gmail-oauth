@@ -8,6 +8,7 @@ Fully working examples (including fetching the access_token) for smtp and imap a
 IMAP Usage
 ----------
 
+    require 'gmail-oauth'
     imap = Net::IMAP.new('imap.gmail.com',993,true)
 
     # For 3legged oauth provide an OAuth::AcessToken
@@ -23,6 +24,8 @@ IMAP Usage
 SMTP Usage
 ----------
 
+    require 'gmail-oauth'
+
     raw_email = generate_email()  
 
     smtp = Net::SMTP.new('smtp.gmail.com')
@@ -31,6 +34,7 @@ SMTP Usage
     smtp.send_message raw_email, "example@gmail.com", "destination@gmail.com"
     smtp.finish
 
-== Copyright
+Copyright
+---------
 
 Copyright (c) 2010 Bob Potter. See LICENSE for details.
