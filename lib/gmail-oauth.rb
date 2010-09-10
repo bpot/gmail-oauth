@@ -1,7 +1,7 @@
 require 'gmail-oauth/request'
 require 'gmail-oauth/client'
-require 'net/imap'
-require 'net/smtp'
+require 'net/imap' unless defined?(Net::IMAP);
+require 'net/smtp' unless defined?(Net::SMTP);
 require 'oauth'
 require 'cgi'
 
